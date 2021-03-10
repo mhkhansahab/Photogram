@@ -9,6 +9,7 @@
     cursor: pointer;
     font-family: Cookie;
     margin-top: 5px;
+    margin-left: 20px;
     font-size: 50px;
     font-weight: bold;
     color: #343434;
@@ -90,5 +91,11 @@
 @media(max-width:712px){
     .uploader, .selector{
         width: 60%;
+    }
+    .uploadmaintitle{        
+        font-size: 40px;
+    }
+    .uploadtitle{
+        font-size: 60px;
     }
 }

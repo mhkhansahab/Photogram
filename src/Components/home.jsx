@@ -168,7 +168,7 @@ class Home extends Component{
                                 <span className="posttitle">{element.postby}</span>
                             </div>
                             <div className="innerbottom">
-                                <div className="like">Likes : {element.likes}</div>
+                                <div className="like">{element.likes} likes</div>
                                 <div className="comment">- {element.description}</div>
                             </div>
                         </div>);

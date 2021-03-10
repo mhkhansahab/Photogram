@@ -9,9 +9,6 @@
     background-color: white !important;
     display: grid;
     height: auto;
-    -webkit-box-shadow: 0px 7px 16px -10px rgba(224,224,224,1);
-    -moz-box-shadow: 0px 7px 16px -10px rgba(224,224,224,1);
-    box-shadow: 0px 7px 16px -10px rgba(224,224,224,1);
     }
 .ptitle{
     cursor: pointer;
@@ -62,4 +59,17 @@
     right: 10px;
     top: 10px;
     border: none;
+}
+
+@media(max-width : 712px){
+  
+ .pavatar{
+     height: 40px;
+ }
+ .ptitle{
+     font-size: 40px;
+ }
+ .pname{
+     font-size: 20px;
+ }
 }
