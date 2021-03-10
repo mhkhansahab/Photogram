@@ -10,7 +10,7 @@ import _5 from "./../Assets/Avatars/5.png";
 class Profile extends Component{
     state = {
         status: false,
-        posts: [],
+        posts: null,
         avatar : window.localStorage.getItem("avatar"),
         info : null
     }
@@ -42,37 +42,10 @@ class Profile extends Component{
         fetch(info_url,info_otherParams)
         .then(data=>data.json())
         .then(res=>{
-            if(res.avatar === 1){
-                this.setState({
-                    avatar : _1,
-                    info : res.username
+            this.setState({
+                info : res.username
                 })
-            }
-            else if(res.avatar === 2){
-                this.setState({
-                    avatar : _2,
-                    info : res.username
-                })
-            }
-            else if(res.avatar === 3){
-                this.setState({
-                    avatar : _3,
-                    info : res.username
-                })
-            }
-            else if(res.avatar === 4){
-                this.setState({
-                    avatar : _4,
-                    info : res.username
-                })
-            }
-            else{
-                this.setState({
-                    avatar : _5,
-                    info : res.username
-                })
-            }  
-        })
+              })
         .catch(err=>console.log(err))
 
         
@@ -157,7 +130,8 @@ class Profile extends Component{
             fetch(url,otherParams)
             .then(data=>data.json())
             .then(res=>{
-               console.log(res);
+               window.localStorage.setItem("avatar",res.avatar);
+               window.location.reload();
             })
             .catch(err=>console.log(err))
     }
@@ -184,7 +158,7 @@ class Profile extends Component{
                 }
                 <div className="pnav">
                     <span className="ptitle" onClick={this.gotoHome}>Photogram</span>
-                    <img src= {this.state.avatar} alt="Avatar" className="pavatar" onClick={this.displayModal}/>
+                    <img src= {this.avatarReturn()} alt="Avatar" className="pavatar" onClick={this.displayModal}/>
                     <span className="pname">{!null ? this.state.info : "none"}</span>
                     <button className="plogout" onClick = {this.logout}>Logout</button>
                 </div>
@@ -192,7 +166,7 @@ class Profile extends Component{
                 <div className="mainpBody">
                 <div className="note">Double tap to delete</div>
                 {
-                    this.state.posts === [] ? <h1 className="nopost">No Post Available</h1>
+                    this.state.posts === null ? <div class="loader"></div>
                     :
                     this.state.posts.map(element=>{
                        return( 

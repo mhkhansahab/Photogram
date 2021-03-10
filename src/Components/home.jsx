@@ -10,7 +10,7 @@ import addimg from "./../Assets/add_photo.png";
 class Home extends Component{
 
     state={
-        posts: [],
+        posts: null,
         avatar : _1
     }
     
@@ -155,7 +155,7 @@ class Home extends Component{
                 <div className="mainBody">
                 <div className="note">Double tap to like</div>
                 {
-                    this.state.posts === [] ? <h1 className="nopost">No Post Available</h1>
+                    this.state.posts === null ? <div class="loader"></div>
                     :
                     this.state.posts.map(element=>{
                        return( 

@@ -10,7 +10,7 @@ class Login extends Component{
     this.state = {
       name : "",
       pass : "",
-      error: ""
+      error: "",
     };
   }
 
@@ -106,19 +106,19 @@ class Login extends Component{
 
   render(){
     return(
+     
         <form onSubmit={this.handleSubmit} className="form">
-        <p>Photogram</p>
+          <p>Photogram</p>
           
           <input className="textfield" value={this.state.name} type="name" placeholder="Username" onChange={(event)=>this.handleChange(event.target.value,"name")}/>
           <input className="textfield" value={this.state.pass} type="password" placeholder="Password" onChange={(event)=>this.handleChange(event.target.value,"password")}/>
           <p id = "error">{this.state.error}</p>
           <Button className="log-button" variant="contained" type="submit" value="Submit" >Sign In</Button>
-        <hr/>
+          <hr/>
           <Button className="reg-button" variant="contained" onClick={this.swap}>Create New Account</Button>
-    </form>
-      
-    );
-  };
+        </form>
+        
+    )};
 }
 
 export default Login;
