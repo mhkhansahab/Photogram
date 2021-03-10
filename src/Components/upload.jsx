@@ -54,13 +54,12 @@ class Upload extends Component{
     render(){
         return(
             <div className="page">
-                <div className="mainHome">
+            <div className="mainHome">
                 <div className="uploadmaintitle" onClick={this.gotoHome}>Photogram</div>
             </div>
             <div className="mainUpload">
                 <p className="uploadtitle">Upload</p>
                 <form className="uploadform" >
-                
                 <textarea type="text" name="text" value = {this.state.value} 
                 onChange={e=>this.setState({description:e.target.value})} 
                 className="caption" placeholder="What's on your mind...."/>

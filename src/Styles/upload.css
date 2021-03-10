@@ -1,19 +1,20 @@
-.mainUpload{
-    text-align: center;
-}
 .page{
     width: 100%;
 }
+.mainUpload{
+    width: 100%;
+}
+
 .uploadmaintitle{
     cursor: pointer;
     font-family: Cookie;
-    margin-left: 20px;
     margin-top: 5px;
     font-size: 50px;
     font-weight: bold;
     color: #343434;
 }
 .uploadtitle{
+    text-align: center;
     font-size: 100px;
     font-family: Cookie;
 }
@@ -26,7 +27,7 @@
 }
 
 .caption{
-    width: 500px;
+    width: 60%;
     font-family: Roboto !important;
     font-weight: 300 !important;
     color: lightgrey;
@@ -50,25 +51,27 @@
 }
 
 .selector{
+    margin: 0 auto;
     border: none;
     border-radius: 5px;
     font-family: Roboto !important;
     font-weight: 700 !important;
     background-color: #f4ad55 !important;
     color: white !important;
-    width: 400px;
+    width: 30%;
     height: 50px;
     margin: 20px !important;
 }
 
 .uploader{
+    margin: 0 auto;
     border-radius: 5px;
     border: none;
     font-family: Roboto !important;
     font-weight: 700 !important;
     color: white !important;
     height: 50px;
-    width: 400px;
+    width: 30%;
     background-color: #f1705b !important;
     margin: 20px 20px 30px 20px !important;
 }
@@ -81,4 +84,11 @@
     width: 400px;
     margin: 5px;
     border-radius: 5px;
+}
+
+
+@media(max-width:712px){
+    .uploader, .selector{
+        width: 60%;
+    }
 }
